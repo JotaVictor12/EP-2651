@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+const char* verificar_referencia(const char* nome) {
+    char lowercase[100001];
+    int i;
+    for (i = 0; nome[i]; i++) {
+        lowercase[i] = tolower(nome[i]);
+    }
+    lowercase[i] = '\0';
+
+    if (strstr(lowercase, "zelda") != NULL) {
+        return "Link Bolado";
+    } else {
+        return "Link Tranquilo";
+    }
+}
+
+int main() {
+    char nome_fan[100001];
+    scanf("%s", nome_fan);
+
+    const char* resultado = verificar_referencia(nome_fan);
+
+    printf("%s\n", resultado);
+
+    return 0;
+}
